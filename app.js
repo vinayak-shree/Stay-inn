@@ -130,9 +130,9 @@ app.use((req , res , next)=>{
 
 
 
-// app.get("/" , (req , res)=>{
-//     console.log("Hi i am root");
-// });
+ app.get("/" , (req , res)=>{
+    res.redirect("/listings");
+ });
 
 
 app.use("/listings" , listings);
@@ -153,4 +153,5 @@ app.use((err , req , res , next) => {
 
 app.listen (8080 , ()=>{
     console.log("Server is running on port 8080");
+
 });
