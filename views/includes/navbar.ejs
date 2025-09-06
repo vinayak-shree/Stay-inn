@@ -1,0 +1,65 @@
+<style>
+  .btn-search{
+    background-color: lightcoral;
+    color: white;
+    border-radius: 50px;
+    /* padding: 5px 1rem 4px 1rem; */
+
+  }
+
+    .btn-search:hover{
+    box-shadow: 4px 2px 7px 2px darkgray;
+    background-color: red;
+    color: white;
+
+  }
+
+  .btn-search i
+  {
+    display: inline;
+    margin-right: 1rem;
+  }
+
+  .search-inp
+  {
+    border-radius: 25px;
+    padding: 0.7rem 1rem 0.5rem 1.5rem;
+  }
+
+</style>
+
+<nav class="navbar navbar-expand-sm bg-body-tertiary border-bottom sticky-top" style="height: 6rem;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><img src="/css/stayin.jpeg" style="height:5rem; width: 5rem; border-radius: 12rem; border: 3px solid black; margin-top: 0.4rem; box-shadow: 4px 3px 8px 3px gray;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link " href="/listings" style="background-color: lightgray; border-radius: 2rem; padding: 10px; color: goldenrod; border: 1px solid black; margin-left: 6rem;">Explore</a>
+        </div>
+      <div class="navbar-nav" style="margin-left: 15rem;">
+  <form class="d-flex " role="search" style="gap: 0.5rem;">
+    <input class="search-inp form-control" 
+           type="search" 
+           placeholder="Search Destination" 
+           aria-label="Search"
+           style="width: 200px;"/> 
+
+    <button class="btn btn-search" type="submit"><i class="fa-brands fa-searchengin ms-1" style="margin-right: 6px;"></i>Search</button>
+  </form>
+  </div>
+      </div>
+       <div class="navbar-nav ms-auto">
+         <a class="nav-link" href="/listings/new">Create Account</a>`
+        <% if(!currUser){%>
+        <b><a class="nav-link" aria-current="page" href="/signup">Sign up</a></b>
+       <b><a class="nav-link" href="/login">Log in</a></b> 
+        <% } %> 
+        <% if(currUser){%>
+       <b><a class="nav-link" href="/logout">Log Out</a></b> 
+        <% } %> 
+      </div>
+    </div>
+  </div>
+</nav>

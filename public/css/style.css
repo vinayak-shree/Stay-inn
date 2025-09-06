@@ -1,0 +1,270 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+.container
+{
+
+    flex: 1;
+}
+
+
+/*Navbar*/
+.navbar
+{
+    height: 5rem;
+}
+
+/* !important is used to override bootstrap navbar*/
+.nav-link
+{
+    color: #212121 !important;
+}
+
+.f-info-links a
+{
+    text-decoration: none;
+    color: #212121;
+    margin: 10px;
+}
+
+.f-info-links a:hover
+{
+    text-decoration: underline;
+    color: #212121;
+    
+}
+
+
+.f-info-socials , .f-info-links , .f-info-brand
+{
+    vertical-align: middle;
+    width: 100%;
+    /* font-size: 1.4rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i
+{
+   font-size: 1.2rem;
+   margin: 10px;
+   /* margin-right: 1rem; */
+}
+/*
+
+.container1
+{
+    background: url('gwaliorfort.jpg')no-repeat center center;
+    background-size: cover;
+   filter: blur(1px);
+   z-index: -1;
+   overflow: hidden;
+   z-index: -1;
+   position: relative;
+}
+
+
+    
+
+
+
+.f-info
+{
+    color: black;
+    text-align: center;
+    display: flex;
+    height: 8rem;
+    /* background-color: wheat; */
+/* flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    z-index: 1;
+}
+*/
+.container1 {
+  position: relative;
+  overflow: hidden;
+}
+
+/* background layer */
+.container1::before {
+  content: ""; /* required for pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('gwaliorfort.jpg') no-repeat center center;
+  background-size: cover;
+  filter: blur(2px);
+  z-index: -1; /* keeps it behind content */
+}
+
+/* content layer */
+.f-info {
+  position: relative;
+  color: black;
+  text-align: center;
+  display: flex;
+  height: 8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; /* fixed */
+  z-index: 1; /* ensures it's above background */
+}
+
+
+
+/* Cards */
+.card
+{
+    border: none !important;
+    margin-bottom: 2rem !important;
+    width: 15rem !important;
+    height: 15rem !important;
+}
+
+.card-img-top
+{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body
+{
+    padding: 10px !important;
+    margin: 0 !important;
+}
+
+.card-text p{
+    font-weight: 400 !important;
+}
+
+.linkss{
+    text-decoration: none;
+}
+
+
+.linkss:hover{
+    text-decoration: none;
+}
+
+
+.card-img-overlay
+{
+    opacity: 0;
+}
+
+.card-img-overlay:hover
+{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/*New Page*/
+
+.add-btn
+{
+    background-color: goldenrod !important;
+    border-color: goldenrod !important;
+}
+
+.edit-btn
+{
+    background-color: goldenrod !important;
+    border-color: goldenrod !important;
+
+}
+
+
+/* Show Page*/
+.show-img
+{
+    height: 20vh !important;
+}
+
+.edit-btn
+{
+    background-color: green !important;
+    border: none !important;
+}
+
+.del-btn
+{
+    background-color: red !important;
+    border: none !important;
+}
+
+.btns
+{
+    display: flex;
+}
+
+.show-img
+{
+    left: 0 !important;
+    width: 30rem !important;
+    height: 30rem !important;
+    padding-left: 0 !important;
+    padding-right: 0  !important;
+}
+
+.overflow1 {
+  overflow: hidden;
+  position: relative;
+  height: 100px;        /* viewport height */
+  padding-bottom: 10px !important;
+}
+
+.overflow1 p {
+  margin: 0;
+  padding: 0;        /* each line height */
+}
+
+.overflow1 .scrolling {
+  display: block;
+  animation: scrolling 20s linear infinite;
+}
+
+.overflow1 .scrolling2 {
+  display: block;
+  animation: scrolling1 10s linear infinite;
+}
+@keyframes scrolling {
+    from
+    {
+        transform: translateY(90px);
+    }
+    to {
+        transform : translateY(-360px);
+    } 
+}
+@keyframes scrolling1 {
+ from
+    {
+        transform: translateY(180px);
+    }
+    to {
+        transform : translateY(0px);
+    } 
+}
+
+
+.fav:hover{
+    font-weight: bolder;
+}
+
+.navi{
+    box-shadow: 3px 4px 8px 4px #212121;
+}
+.stop.scrolling2:hover{
+    animation-play-state: paused;
+}
+/*  */
+

@@ -1,0 +1,144 @@
+<% layout("./layouts/boilerPlate") %>
+<body>
+  <style>
+   #filters
+   {
+    display: flex;
+    /* flex-direction: column;. */
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    align-items: center;
+   }
+   .filter
+   {
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    opacity: 0.8;
+  }
+  .heart
+  {
+    color: black;
+  }
+  .tax-info
+  {
+    display: none;
+  }
+.filter:hover
+{
+  opacity: 1;
+  cursor: pointer;
+}
+.form-switch{
+  margin-right: 1rem;
+  padding-left: 0;
+  padding: 15px;
+}
+.tax-toggle
+{
+  border: 1px solid black;
+  border-radius: 2rem;
+  height: 3rem;
+  padding: 4px;
+  margin-left: 5rem;
+  display: flex;
+ align-items: center;
+}
+  </style>
+  <div style="margin-top: 1rem;">
+<div id="filters" style="border-radius: 2rem;  width: 70rem; background-color: lightgray; height: 4rem; "  onmouseover="this.style.boxShadow='3px 4px 12px 4px gray'"
+     onmouseout="this.style.boxShadow='none'"> 
+  <div class="fav filter ms-4 mt-2">
+    <i class="fa-solid fa-fire"></i><br/>
+    <p>Trending</p>
+    </div>
+    <div class="fav filter mt-2">
+      <i class="fa-solid fa-house-user"></i></i><br/>
+    <p>Rooms</p>
+  </div>
+  <div class="fav filter mt-2">
+    <i class="fa-solid fa-mountain-sun"></i><br/>
+    <p>Mountains</p>
+  </div>
+   <div class="fav filter mt-2">
+    <i class="fav fa-solid fa-gopuram"></i>
+    <p>Spiritual</p>
+  </div>
+   <div class="fav filter mt-2">
+    <i class="fa-solid fa-holly-berry"></i><br/>
+    <p>Hills station</p>
+  </div>
+   <div class="fav filter mt-2">
+    <i class="fa-solid fa-mountain-sun"></i><br/>
+    <p>Mountains</p>
+  </div>
+  <div class="d-flex ms-auto" style="margin-right: 1rem; margin-bottom: 15px;">
+    <div class="tax-toggle form-check-reverse mt-2" >
+    <div class="form-check form-switch">
+  <input class="form-check-input ms-2" type="checkbox" role="switch" id="switchCheckDefault">
+  <label class="form-check-label" for="switchCheckDefault">Display Total after Taxes</label>
+</div>
+</div>
+    </div>
+  
+</div>
+</div>
+
+
+
+    <!-- <form method = "GET" action="/listings/new">
+        <button>Create new Account</button>
+    </form> -->
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-3">
+  <% for(let listing of allListings){ %>
+    <div class="col">
+      <a href="/listings/<%= listing._id%>" class="linkss">
+        <div class="card col-8  h-100">
+          <div class="img-container" style="margin-bottom: 10px; gap: 4; margin-top: 1rem;">
+          <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="border: 2px solid black; box-shadow: 5px 0px 10px 4px gray; border-radius: 2rem; height: 10rem;">
+          <div class="card-img-overlay"><i class="heart fa-regular fa-heart"></i></div>
+          <div class="card-body mt-2">
+            <h5><%= listing.title %></h5>
+            <h6>
+              &#8377; <%= listing.price.toLocaleString("en-IN") %> <span style="font-weight: lighter;">per night</span> 
+              <i class="tax-info" style="color: green; font-weight: lighter;"> +18% GST </i>
+            </h6>
+            <div class="overflow1">
+              <div class="scrolling">
+         <p style="color: black;"><%= listing.description %></p>
+         </div>
+         </div>
+         </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  <% } %>
+</div>
+
+<!-- <ul>
+   <% for(let listing of allListings){ %>
+    <li><a href = "/listings/<%= listing._id %>"><%= listing.title %></a></li> 
+    <% } %>
+</ul> -->
+</body>
+
+<script>
+  let priceToggle = document.getElementById("switchCheckDefault");
+  priceToggle.addEventListener("click",()=>{
+    let taxInfo = document.getElementsByClassName("tax-info");
+    // console.log(taxInfo);
+    for(info of taxInfo)
+  {
+    if(info.style.display!="inline"){
+    info.style.display = "inline";
+    }
+    else
+    {
+      info.style.display = "none";
+    }
+  }
+    
+  })
+</script>
